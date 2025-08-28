@@ -10,7 +10,12 @@ pictureContainer.addEventListener('click', (ev) => {
     ev.preventDefault();
 
     const newLargeImg = imgLink.getAttribute('href');
+    const oldImg = imgLink.querySelector('img');
 
     largeImg.setAttribute('src', newLargeImg);
+
+    if (oldImg.getAttribute('alt')) {
+      largeImg.setAttribute('alt', oldImg.getAttribute('alt'));
+    }
   }
 });
